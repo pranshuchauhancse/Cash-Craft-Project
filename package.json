@@ -1,15 +1,22 @@
 {
-  "name": "cashcraft-node",
+  "name": "cashcraft",
   "version": "1.0.0",
+  "description": "A smart personal finance tracker for managing expenses, budgets, and savings goals.",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js"
+    "start": "node app.js",
+    "dev": "nodemon app.js"
   },
+  "keywords": ["finance", "budget", "expenses", "nodejs", "mongodb", "ejs"],
+  "author": "Your Name",
+  "license": "MIT",
   "dependencies": {
-    "body-parser": "^1.20.3",
-    "dotenv": "^17.2.1",
-    "ejs": "^3.1.10",
-    "express": "^4.21.2",
-    "mongoose": "^7.8.7"
+    "dotenv": "^16.0.0",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "mongoose": "^7.2.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
   }
 }
