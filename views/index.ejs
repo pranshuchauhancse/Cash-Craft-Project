@@ -1,11 +1,28 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>CashCraft</title>
+  <meta charset="UTF-8">
+  <title>CashCraft - Smart Finance Tracker</title>
   <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-  <h1>Welcome to CashCraft</h1>
-  <script src="/js/script.js"></script>
+  <div class="container">
+    <h1>CashCraft</h1>
+    <form action="/add" method="POST">
+      <input type="text" name="title" placeholder="Expense Title" required>
+      <input type="number" name="amount" placeholder="Amount" required>
+      <input type="text" name="category" placeholder="Category" required>
+      <button type="submit">Add Expense</button>
+    </form>
+
+    <ul class="expenses">
+      <% expenses.forEach(exp => { %>
+        <li>
+          <strong><%= exp.title %></strong> - ₹<%= exp.amount %> (<%= exp.category %>)
+          <a href="/delete/<%= exp._id %>">❌</a>
+        </li>
+      <% }) %>
+    </ul>
+  </div>
 </body>
 </html>
