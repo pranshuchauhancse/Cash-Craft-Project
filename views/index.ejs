@@ -1,25 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>CashCraft - Smart Finance Tracker</title>
-  <link rel="stylesheet" href="/css/style.css">
+  <meta charset="UTF-8" />
+  <title>CashCraft (Local)</title>
+  <link rel="stylesheet" href="/css/style.css" />
 </head>
 <body>
   <div class="container">
-    <h1>CashCraft</h1>
+    <h1>CashCraft (No DB)</h1>
     <form action="/add" method="POST">
-      <input type="text" name="title" placeholder="Expense Title" required>
-      <input type="number" name="amount" placeholder="Amount" required>
-      <input type="text" name="category" placeholder="Category" required>
+      <input type="text" name="name" placeholder="Expense Name" required />
+      <input type="number" name="amount" placeholder="Amount" required />
       <button type="submit">Add Expense</button>
     </form>
 
-    <ul class="expenses">
+    <ul>
       <% expenses.forEach(exp => { %>
         <li>
-          <strong><%= exp.title %></strong> - ₹<%= exp.amount %> (<%= exp.category %>)
-          <a href="/delete/<%= exp._id %>">❌</a>
+          <strong><%= exp.name %>:</strong> ₹<%= exp.amount %>
+          <form action="/delete/<%= exp.id %>" method="POST" style="display:inline;">
+            <button type="submit">❌</button>
+          </form>
         </li>
       <% }) %>
     </ul>
